@@ -1,6 +1,6 @@
 name: Build Jet POC
 
-on: [push, pull_request]
+on: [push]
 
 env:
   GRADLE_OPTS: "-Dorg.gradle.jvmargs=-Xmx4g -Dorg.gradle.daemon=false -Dkotlin.incremental=false "
@@ -23,7 +23,7 @@ jobs:
       - uses: actions/setup-java@v3
         with:
           distribution: 'zulu'
-          java-version: 8
+          java-version: 11
 
       - uses: gradle/gradle-build-action@v2
 
